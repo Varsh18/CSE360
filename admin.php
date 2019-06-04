@@ -11,6 +11,7 @@
                   <a href="#"><img src="images/user.png" alt="user-icon"/></a>
             </div>
             <div class="desc">
+                  <span>User List</span>
             </div>
       </div>
       <div class="box">
