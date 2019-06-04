@@ -15,8 +15,9 @@
     }
     .box{
       border:0.5em solid black;
-      padding-left: 3em;
-      padding-top:  2em;
+      margin-left: 3em;
+      margin-top:  2em;
+      padding: 1.5em;
       text-align: center;
     }
     .desc{
