@@ -1,5 +1,5 @@
 <?php
-$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$actual_link = "http://$_SERVER[HTTP_HOST]/CSE360/";
 $text=$url=$result='';
 $db=mysqli_connect("localhost","root","","cse360") or die("cannot connect");
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -10,11 +10,13 @@ if(isset($_POST["submit"])){
   $temp = explode(".", $_FILES["file"]["name"]);
   $newfilename = $content . '.' . end($temp);
   $target="contents/".$newfilename;
-  $url=$actual_link.'/'.$content.'.php';
+  $url=$actual_link.$content.'.php';
   if(move_uploaded_file($_FILES['file']['tmp_name'],$target)){
         $sql="INSERT INTO contents (name,image,img_name,url) VALUES ('$content','$file','$newfilename','$url')";
         if(mysqli_query($db,$sql)){
           $result="Added content";
+          $myfile = fopen($content.".php", "w") or die("Unable to open file!");
+          copy("index.php",$content.".php");
         }
   }
   else
@@ -100,7 +102,7 @@ if(isset($_POST["submit"])){
           while($row=mysqli_fetch_array($result)){
               echo  "<div class='box'>";
               echo  " <div class='picture'>";
-              echo  '<a href="'.$row['url'].'"><img src="contents/'.$row['img_name']. '" alt='.$row['name'].'/></a>';
+              echo  '<a href="'.$row['url'].'"><img src="contents/'.$row['img_name']. '" alt="'.$row['name'].'"/></a>';
               echo  "</div>";
               echo  "<div class='desc'>";
               echo  '<a href="'.$row['url'].'"><span>'.$row['name'].'</span></a>';
