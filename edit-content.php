@@ -1,3 +1,6 @@
+<?php
+$db=mysqli_connect("localhost","root","","cse360") or die("cannot connect");
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
