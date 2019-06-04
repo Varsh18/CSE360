@@ -42,10 +42,10 @@
       </div>
       <div class="box">
             <div class="picture">
-                  <a href="#"><img src="images/settings.png" alt="settings-icon"/></a>
+                  <a href="edit-content.php"><img src="images/settings.png" alt="settings-icon"/></a>
             </div>
             <div class="desc">
-                  <a href="#"><span>Website Settings</span></a>
+                  <a href="edit-content.php"><span>Website Settings</span></a>
             </div>
       </div>
  </div>
