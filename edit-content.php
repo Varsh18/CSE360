@@ -1,5 +1,29 @@
 <?php
+$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$text=$url=$result='';
+echo $actual_link;
 $db=mysqli_connect("localhost","root","","cse360") or die("cannot connect");
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+if(isset($_POST["submit"])){
+  $content=$_POST["name"];
+  $file=$_FILES['file']['name'];
+  $image=$_FILES['file']['name'];
+  $temp = explode(".", $_FILES["file"]["name"]);
+  $newfilename = $content . '.' . end($temp);
+  $target="contents/".$newfilename;
+  $url=$actual_link.'/'.$content.'.php';
+  if(move_uploaded_file($_FILES['file']['tmp_name'],$target)){
+        $sql="INSERT INTO contents (name,image,img_name,url) VALUES ('$content','$file','$newfilename','$url')";
+        if(mysqli_query($db,$sql)){
+          $result="Added content";
+          echo "$result";
+        }
+  }
+  else
+	echo "error";
+
+}
+}
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
