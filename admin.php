@@ -3,6 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>Admin Console</title>
+    <style>
+    img{
+      width:200px;
+      height:150px;
+    }
+    </style>
   </head>
   <body>
  <div id="container">
