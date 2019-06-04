@@ -8,6 +8,9 @@
       width:200px;
       height:150px;
     }
+    #container{
+      width:100%;
+    }
     </style>
   </head>
   <body>
