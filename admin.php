@@ -13,6 +13,10 @@
       display:flex;
       flex-wrap: wrap;
     }
+    .box{
+      padding-left: 3em;
+      padding-top:  2em;
+    }
     </style>
   </head>
   <body>
