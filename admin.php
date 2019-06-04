@@ -22,6 +22,10 @@
       padding-top: 1.5em;
       display:inline-block;
     }
+    a{
+      text-decoration: none;
+      font-size: 2em;
+    }
     </style>
   </head>
   <body>
