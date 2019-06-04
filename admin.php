@@ -16,6 +16,11 @@
     .box{
       padding-left: 3em;
       padding-top:  2em;
+      text-align: center;
+    }
+    .desc{
+      padding-top: 1.5em;
+      display:inline-block;
     }
     </style>
   </head>
