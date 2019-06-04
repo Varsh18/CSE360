@@ -14,6 +14,7 @@
       flex-wrap: wrap;
     }
     .box{
+      border:0.5em solid black;
       padding-left: 3em;
       padding-top:  2em;
       text-align: center;
