@@ -16,8 +16,10 @@
       </div>
       <div class="box">
             <div class="picture">
+                  <a href="#"><img src="images/settings.png" alt="settings-icon"/></a>
             </div>
             <div class="desc">
+                  <a href="#"><span>Website Settings</span></a>
             </div>
       </div>
  </div>
