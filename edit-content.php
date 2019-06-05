@@ -25,7 +25,6 @@ if(isset($_POST["submit"])){
 }
 }
 ?>
-<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -75,11 +74,24 @@ if(isset($_POST["submit"])){
       text-align: center;
       display: none;
     }
-    input[type="text"]{
+    #insert-text input[type="text"]{
       width: 25em;
       height: 3em;
     }
-
+    input[type="text"]{
+      width: 15em;
+      height: 3em;
+      margin-bottom: 0.5em;
+    }
+    input[type="button"]{
+      margin-bottom: 2em;
+    }
+    input[type="submit"]{
+      margin-top: 2em;
+    }
+    select{
+      margin-left: 1em;
+    }
     #pop-up{
       width:500px;
       height:300px;
@@ -87,6 +99,7 @@ if(isset($_POST["submit"])){
       border-radius: 4px;
       text-align: center;
       padding: 20px;
+      overflow: auto;
     }
     .pop-inside{
       padding-bottom: 3em;
@@ -123,7 +136,7 @@ if(isset($_POST["submit"])){
     <div id="add-content">
       <div id="pop-up">
             <div class="close">
-               <img src="images/close.jpg"  alt="close" width="12" height="12"/>
+               <img src="images/close.jpg" id="close" alt="close" width="12" height="12"/>
             </div>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>" method="POST" enctype="multipart/form-data">
                 <div id="insert-text" class="pop-inside">
@@ -131,6 +144,14 @@ if(isset($_POST["submit"])){
                 </div>
                 <div id="insert-image" class="pop-inside">
                     <input type="file" name="file" accept="image/gif, image/jpeg" />
+                </div>
+                <div class="input-col pop-inside">
+                      <input type="text" name="column-size" id="column-size" placeholder="Enter column size"/>
+                </div>
+                <div class="go" class="input-col pop-inside">
+                      <input type="button"id="go" name="column-submit" value="Go" />
+                </div>
+                <div id="dynamic-input">
                 </div>
                 <div id="form-submit" class="pop-inside">
                     <input type="submit" name="submit" value="Create"/>
@@ -145,8 +166,33 @@ if(isset($_POST["submit"])){
     document.getElementsByClassName('add-button')[1].addEventListener('click',function(){
       document.querySelector('#add-content').style.display="flex";
     });
-    document.getElementsByClassName('close')[0].addEventListener('click',function(){
+    document.getElementById('close').addEventListener('click',function(){
       document.querySelector('#add-content').style.display="none";
+    });
+    document.getElementById('go').addEventListener('click',function(){
+    document.querySelector('#add-content').style.display="flex";
+    var length=document.getElementById('column-size').value;
+    if(!length)
+    alert("Enter a valid length"+length);
+    else{
+    var tag=document.getElementById('dynamic-input');
+    for(var i=0;i<length;i++){
+    var text=document.createElement("input");
+    text.setAttribute("type","text");
+    text.setAttribute("class","cname");
+    tag.appendChild(text);
+
+    var array=["VARCHAR","INT","LONGBLOB"];
+    var select=document.createElement("SELECT");
+    var options= document.createElement("option");
+    for(var itr=0;itr<array.length;itr++)
+    select.options.add( new Option(array[itr],array[itr]) );
+    tag.appendChild(select);
+    tag.setAttribute("class","datatype");
+    }
+    document.querySelector('#add-content').style.display="flex";
+
+    }
     });
     </script>
   </body>
