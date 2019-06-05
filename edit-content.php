@@ -16,17 +16,17 @@ if(isset($_POST["submit"])){
   $coltype[$itr]=$coltype[$itr]."(500)";
   else if( $coltype[$itr] == "INT")
   $coltype[$itr]=$coltype[$itr]."(100)";
-
+  if($itr == $count-1)
+  $insertql=$insertql.$colname[$itr]." ".$coltype[$itr].")";
+  else
   $insertql=$insertql.$colname[$itr]." ".$coltype[$itr].",";
   }
-
   $file=$_FILES['file']['name'];
   $image=$_FILES['file']['name'];
   $temp = explode(".", $_FILES["file"]["name"]);
   $newfilename = $content . '.' . end($temp);
   $target="contents/".$newfilename;
   $url=$actual_link.$content.'.php';
-  $insertql=$insertql."url VARCHAR(20))";
   if (!file_exists($content.'/')) {
     mkdir($content.'/', 0777, true);
 }
