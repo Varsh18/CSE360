@@ -5,15 +5,34 @@ $db=mysqli_connect("localhost","root","","cse360") or die("cannot connect");
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 if(isset($_POST["submit"])){
   $content=$_POST["name"];
+  $insertql="CREATE TABLE ".$content."(";
+  $count=$_POST["column-size"];
+  $colname=array();
+  $coltype=array();
+  for($itr=0;$itr<$count;$itr++){
+  $colname[$itr]=$_POST["cname".$itr];
+  $coltype[$itr]=$_POST["ctype".$itr];
+  if($coltype[$itr] == "VARCHAR")
+  $coltype[$itr]=$coltype[$itr]."(500)";
+  else if( $coltype[$itr] == "INT")
+  $coltype[$itr]=$coltype[$itr]."(100)";
+  if($itr == $count-1)
+  $insertql=$insertql.$colname[$itr]." ".$coltype[$itr].")";
+  else
+  $insertql=$insertql.$colname[$itr]." ".$coltype[$itr].",";
+  }
   $file=$_FILES['file']['name'];
   $image=$_FILES['file']['name'];
   $temp = explode(".", $_FILES["file"]["name"]);
   $newfilename = $content . '.' . end($temp);
   $target="contents/".$newfilename;
   $url=$actual_link.$content.'.php';
+  if (!file_exists($content.'/')) {
+    mkdir($content.'/', 0777, true);
+}
   if(move_uploaded_file($_FILES['file']['tmp_name'],$target)){
         $sql="INSERT INTO contents (name,image,img_name,url) VALUES ('$content','$file','$newfilename','$url')";
-        if(mysqli_query($db,$sql)){
+        if(mysqli_query($db,$sql) && mysqli_query($db,$insertql)){
           $result="Added content";
           $myfile = fopen($content.".php", "w") or die("Unable to open file!");
           copy("index.php",$content.".php");
@@ -21,7 +40,6 @@ if(isset($_POST["submit"])){
   }
   else
 	echo "error";
-
 }
 }
 ?>
@@ -180,6 +198,7 @@ if(isset($_POST["submit"])){
     var text=document.createElement("input");
     text.setAttribute("type","text");
     text.setAttribute("class","cname");
+    text.setAttribute("name","cname"+i);
     tag.appendChild(text);
 
     var array=["VARCHAR","INT","LONGBLOB"];
@@ -189,6 +208,7 @@ if(isset($_POST["submit"])){
     select.options.add( new Option(array[itr],array[itr]) );
     tag.appendChild(select);
     tag.setAttribute("class","datatype");
+    select.setAttribute("name","ctype"+i);
     }
     document.querySelector('#add-content').style.display="flex";
 
