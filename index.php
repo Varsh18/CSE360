@@ -71,6 +71,19 @@
         margin-bottom: -40px;
       }
     }
+    #contact-us{
+      display: flex;
+      flex-wrap:
+    }
+    #fill-form{
+      width:50%;
+      padding-left: 12%;
+      
+    }
+    #address-info{
+      width:50%;
+    }
+
     </style>
   </head>
   <body>
