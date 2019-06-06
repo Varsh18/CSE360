@@ -76,8 +76,9 @@
       flex-wrap:
     }
     #fill-form{
-      width:50%;
-      padding-left: 12%;
+      width:90%;
+      padding-left: 16%;
+      padding-top: 10%;
     }
     #address-info{
       width:100%;
@@ -85,6 +86,14 @@
     .text input[type="text"]{
       width:100%;
       height:2.5em;
+      margin-top: 1.5em;
+      margin-bottom: 1.5em;
+    }
+    .text textarea{
+      width:100%;
+      height:7em;
+      margin-top: 1.5em;
+      margin-bottom: 1.5em;
     }
     </style>
   </head>
