@@ -150,7 +150,10 @@
    <p>Velammal Engineering College</p>
    <p>Chennai</p>
  </div>
-
+ <div class="address">
+   <span>Phone</span>
+   <p>+91 1234567890</p>
+ </div>
   </div>
   </div>
   </body>
