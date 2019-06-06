@@ -98,5 +98,15 @@
   <hr/>
   </div>
   </div>
+  <div id="contact-us">
+  <div id="fill-form">
+  <div class="text">
+    <span>Full Name</span>
+    <input type="text" placeholder="Full Name" id="name" name="name"/>
+  </div>
+  </div>
+  <div id="address-info">
+  </div>
+  </div>
   </body>
 </html>
