@@ -107,6 +107,7 @@
     </style>
   </head>
   <body>
+  <?php include "header.php" ?>
   <div id="background">
     <div class="container">
         <span class="text1">Enjoy with us</span>
