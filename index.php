@@ -22,6 +22,15 @@
       width:50%;
       height:45em;
     }
+    #about{
+      width:50%;
+      display:inline-block;
+    }
+    #about-company{
+      display:flex;
+      flex-wrap:wrap;
+      text-align: center;
+    }
     .container{
       text-align: center;
       position:absolute;
@@ -75,7 +84,10 @@
   <div id="working">
   </div>
   <div id="about">
-    
+      <h3>Welcome to CSE360!<h3>
+      <span>Hello There..</span>
+      <p> CSE360 provides complete guide about many latest technologies in the field of
+        Computer Science and Engineering</p>
   </div>
   </div>
   </body>
