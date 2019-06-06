@@ -7,6 +7,9 @@
       text-decoration: none;
       color:#000;
     }
+    ul,li{
+      list-style: none;
+    }
     </style>
   </head>
   <body>
