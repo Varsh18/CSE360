@@ -154,6 +154,10 @@
    <span>Phone</span>
    <p>+91 1234567890</p>
  </div>
+ <div class="address">
+   <span>Email Address</span>
+   <p>cse360@gmail.com</p>
+ </div>
   </div>
   </div>
   </body>
