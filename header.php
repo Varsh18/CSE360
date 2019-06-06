@@ -23,6 +23,9 @@
     span{
       width:50%;
     }
+    #header{
+      padding-bottom: 2em;
+    }
     </style>
   </head>
   <body>
