@@ -2,6 +2,12 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <style>
+    a{
+      text-decoration: none;
+      color:#000;
+    }
+    </style>
   </head>
   <body>
     <div id="header">
