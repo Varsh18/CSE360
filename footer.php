@@ -12,7 +12,7 @@
   padding-left: 1em;
 }
 #foo-right{
-  margin-top: -2em;
+  margin-top: -1em;
   float:right;
   padding-right: 1em;
 }
