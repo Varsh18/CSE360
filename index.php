@@ -39,7 +39,7 @@
       transform: translate(-50%,-50%);
     }
     .text1{
-      font-size:30px;
+      font-size:15px;
       color:#6ab04c;
     }
     .text2{
