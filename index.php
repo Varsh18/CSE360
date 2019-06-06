@@ -3,8 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>CSE360</title>
+
+    <style>
+    #background{
+      background-image: url('images/laptops-cut.jpg');
+      background-size: cover;
+      height: 50em;
+    }
+    </style>
   </head>
   <body>
-
+  <div id="background">
+  </div>
   </body>
 </html>
