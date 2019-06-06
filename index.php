@@ -74,6 +74,7 @@
     #contact-us{
       display: flex;
       flex-wrap:wrap;
+      background-color: #F9F9F9;
     }
     #fill-form{
       width:40%;
