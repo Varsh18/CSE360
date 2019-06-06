@@ -75,6 +75,7 @@
       display: flex;
       flex-wrap:wrap;
       background-color: #F9F9F9;
+      width:100%;
     }
     #fill-form{
       width:40%;
@@ -129,8 +130,18 @@
   <div id="content-heading">
         <h3>Our contents</h3>
   </div>
-  <div class="hr">
-  <hr/>
+  <div class="box">
+    <div class="hr">
+    <hr/>
+    </div>
+        <div class="content-list">
+              <div class="content-image">
+              <a href="#"><img src="images/user.png" alt="chumma"/></a>
+              </div>
+              <div class="content-name">
+              <a href="#"><span>name</span></a>
+              </div>
+        </div>
   </div>
   </div>
   <div id="contact-us">

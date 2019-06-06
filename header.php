@@ -13,7 +13,7 @@
       list-style: none;
       display: inline-block;
     }
-    #content{
+    #content-header{
     float: right;
     }
     #title{
@@ -32,7 +32,7 @@
     <div id="header">
       <div id="title">
           <span>CSE360</span>
-       <div id="content">
+       <div id="content-header">
          <ul>
             <li><a href="">Home</a></li>
             <li><a href="">Content</a></li>
