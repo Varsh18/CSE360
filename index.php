@@ -90,5 +90,10 @@
         Computer Science and Engineering</p>
   </div>
   </div>
+  <div id="content">
+  <div id="content-heading">
+        <h3>Our contents</h3>
+  </div>
+  </div>
   </body>
 </html>
