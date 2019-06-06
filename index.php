@@ -73,15 +73,17 @@
     }
     #contact-us{
       display: flex;
-      flex-wrap:
+      flex-wrap:wrap;
     }
     #fill-form{
-      width:90%;
+      width:40%;
       padding-left: 16%;
       padding-top: 10%;
     }
     #address-info{
-      width:100%;
+      width:20%;
+      margin-left:19em;
+      padding-top: 10%;
     }
     .text input[type="text"]{
       width:100%;
@@ -94,6 +96,13 @@
       height:7em;
       margin-top: 1.5em;
       margin-bottom: 1.5em;
+    }
+    .address{
+      padding-top: 4%;
+      padding-bottom: 4%;
+    }
+    .address span{
+      padding-bottom: 2%;
     }
     </style>
   </head>
