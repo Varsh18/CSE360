@@ -144,6 +144,13 @@
   </div>
   </div>
   <div id="address-info">
+ <h3>Contact Info</h3>
+ <div class="address">
+   <span>Address</span>
+   <p>Velammal Engineering College</p>
+   <p>Chennai</p>
+ </div>
+
   </div>
   </div>
   </body>
