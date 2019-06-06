@@ -15,18 +15,21 @@
     }
     #content{
     float: right;
-    margin-right: 6em;
-    margin-top: 3em;
+    }
+    #title{
+      padding-top: 3em;
+      padding-left: 7em;
     }
     span{
-      margin-right: 42em;
+      width:50%;
     }
     </style>
   </head>
   <body>
     <div id="header">
+      <div id="title">
+          <span>CSE360</span>
        <div id="content">
-           <span>CSE360</span>
          <ul>
             <li><a href="">Home</a></li>
             <li><a href="">Content</a></li>
@@ -34,6 +37,7 @@
             <li><a href="">Contact</a></li>
         </ul>
        </div>
+     </div>
     </div>
   </body>
 </html>
