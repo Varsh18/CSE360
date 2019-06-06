@@ -78,12 +78,14 @@
     #fill-form{
       width:50%;
       padding-left: 12%;
-      
     }
     #address-info{
-      width:50%;
+      width:100%;
     }
-
+    .text input[type="text"]{
+      width:100%;
+      height:2.5em;
+    }
     </style>
   </head>
   <body>
