@@ -14,6 +14,10 @@
   </head>
   <body>
   <div id="background">
+    <div class="container">
+        <span class="text1">ENJOY WITH US</span>
+        <span class="text2">CSE360</span>
+    </div>
   </div>
   </body>
 </html>
