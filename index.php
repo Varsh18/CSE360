@@ -104,6 +104,20 @@
     <span>Full Name</span>
     <input type="text" placeholder="Full Name" id="name" name="name"/>
   </div>
+
+  <div class="text">
+    <span>Email</span>
+    <input type="text" placeholder="Email Address" id="email" name="email"/>
+  </div>
+
+  <div class="text">
+    <span>Phone</span>
+    <input type="text" placeholder="Phone Number #" id="phone" name="phone"/>
+  </div>
+  <div class="text">
+    <span>Message</span>
+    <textarea rows="6" cols="20" placeholder="Say Hello to us" id="message" name="message"></textarea>
+  </div>
   </div>
   <div id="address-info">
   </div>
