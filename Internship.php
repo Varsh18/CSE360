@@ -109,17 +109,11 @@ $db=mysqli_connect("localhost","root","","cse360") or die("cannot connect");
       padding-bottom: 2%;
     }
    .box{
-     padding-left: 8%;
-     padding-right: 8%;
-   display:flex;
-   flex-wrap: wrap;
+   padding-left: 15%;
+   padding-right: 15%;
     }
     .content-name{
     font-size:2em;
-    width:310px;
-    }
-    .content-name{
-      word-wrap: break-word;
     }
     .content-image img{
       width:250px;
@@ -161,7 +155,7 @@ $db=mysqli_connect("localhost","root","","cse360") or die("cannot connect");
   while($row=mysqli_fetch_array($result)){
   echo '<div class="content-list">';
   echo  '<div class="content-image">';
-  echo   '<a href="'.$row["url"].'"><img src="contents/'.$row["img_name"].'" alt="'.$row["name"].'"/></a>';
+  echo   " <a href='".$row["url"]."'><img src='content/'".$row["img_name"]."alt='".$row["name"]."'/></a>";
   echo  ' </div>';
   echo   '<div class="content-name">';
   echo " <a href='".$row["url"]."'><span>".$row["name"]."</span></a>";

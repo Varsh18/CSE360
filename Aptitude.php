@@ -109,17 +109,13 @@ $db=mysqli_connect("localhost","root","","cse360") or die("cannot connect");
       padding-bottom: 2%;
     }
    .box{
-     padding-left: 8%;
-     padding-right: 8%;
+   padding-left: 15%;
+   padding-right: 15%;
    display:flex;
    flex-wrap: wrap;
     }
     .content-name{
     font-size:2em;
-    width:310px;
-    }
-    .content-name{
-      word-wrap: break-word;
     }
     .content-image img{
       width:250px;

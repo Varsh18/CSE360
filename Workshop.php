@@ -116,10 +116,6 @@ $db=mysqli_connect("localhost","root","","cse360") or die("cannot connect");
     }
     .content-name{
     font-size:2em;
-    width:310px;
-    }
-    .content-name{
-      word-wrap: break-word;
     }
     .content-image img{
       width:250px;
