@@ -95,6 +95,24 @@ $db=mysqli_connect("localhost","root","","cse360") or die("cannot connect");
       margin-top: 1.5em;
       margin-bottom: 1.5em;
     }
+    #content{
+      padding-bottom: 4em;
+    }
+    #content-heading{
+      text-align: center;
+      font-size: 2em;
+      padding-top: 2em;
+      padding-bottom: 1em;
+    }
+    .hr{
+      text-align: center;
+    }
+    hr{
+      display: inline-block;
+      width:15%;
+      height: 0.25em;
+      background-color: #456;
+    }
     .text textarea{
       width:100%;
       height:7em;
