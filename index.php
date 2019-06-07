@@ -106,6 +106,19 @@
     .address span{
       padding-bottom: 2%;
     }
+   .box{
+   padding-left: 15%;
+   padding-right: 15%;
+    }
+    .content-name{
+    font-size:2em;
+    }
+    .content-image img{
+      width:250px;
+      height:250px;
+      padding-top:2em;
+      padding-right:1em;
+    }
     </style>
   </head>
   <body>
@@ -130,18 +143,11 @@
   <div id="content-heading">
         <h3>Our contents</h3>
   </div>
+  <div class="hr">
+  <hr/>
+  </div>
   <div class="box">
-    <div class="hr">
-    <hr/>
-    </div>
-        <div class="content-list">
-              <div class="content-image">
-              <a href="#"><img src="images/user.png" alt="chumma"/></a>
-              </div>
-              <div class="content-name">
-              <a href="#"><span>name</span></a>
-              </div>
-        </div>
+        
   </div>
   </div>
   <div id="contact-us">
