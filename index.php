@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<?php
+ ?>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -147,7 +148,20 @@
   <hr/>
   </div>
   <div class="box">
-        
+  <?php
+  $sql="SELECT * FROM contents ORDER BY ASC";
+  $result=mysqli_query($sql);
+  while($row=mysqli_fetch_array($result)){
+  echo "<div class="content-list">";
+  echo     " <div class="content-image">";
+  echo     " <a href='".$row["url"]."'><img src='content/'".$row["img_name"]."alt='".$row["name"]."'/></a>";
+  echo "      </div>";
+  echo "      <div class="content-name">";
+  echo"      <a href='".$row["url"]."'><span>".$row["name"]."</span></a>";
+  echo"      </div>";
+  echo "</div>";
+  }
+  ?>
   </div>
   </div>
   <div id="contact-us">
