@@ -78,6 +78,7 @@ $db=mysqli_connect("localhost","root","","cse360") or die("cannot connect");
       flex-wrap:wrap;
       background-color: #F9F9F9;
       width:100%;
+      padding-bottom: 4em;
     }
     #fill-form{
       width:40%;
