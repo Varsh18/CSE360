@@ -145,6 +145,20 @@ $db=mysqli_connect("localhost","root","","cse360") or die("cannot connect");
       padding-top:2em;
       padding-right:1em;
     }
+    #about h3{
+      padding-top: 10em;
+      font-size: 1.5em;
+    }
+    #about span{
+     font-size: 1.25em;
+    }
+    #about p{
+      padding-top: 4em;
+      padding-left: 13%;
+      padding-right: 13%;
+      font-size: 1.5em;
+
+    }
     </style>
   </head>
   <body>
@@ -159,7 +173,7 @@ $db=mysqli_connect("localhost","root","","cse360") or die("cannot connect");
   <div id="working">
   </div>
   <div id="about">
-      <h3>Welcome to CSE360!<h3>
+      <h3>Welcome to CSE360!</h3>
       <span>Hello There..</span>
       <p> CSE360 provides complete guide about many latest technologies in the field of
         Computer Science and Engineering</p>
