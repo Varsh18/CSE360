@@ -122,6 +122,27 @@ if(isset($_POST["submit"])){
     .pop-inside{
       padding-bottom: 3em;
     }
+
+    table, th, td {
+      border: 1px solid black;
+    }
+    table {
+      width: 100%;
+      border-collapse:collapse;
+    }
+    body{
+      margin-left:10em;
+      margin-right:10em;
+    }
+    input[type="text"]{
+    width:100%;
+    }
+    th {
+      height: 50px;
+    }
+    th,td{
+    width:50%;
+    }
     </style>
   </head>
   <body>
