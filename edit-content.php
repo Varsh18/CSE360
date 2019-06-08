@@ -178,7 +178,7 @@ if(isset($_POST["submit"])){
       </div>
     </div>
 
-    <div>
+    <div id="edit-table">
 
       <table>
       <thead>
@@ -200,8 +200,6 @@ if(isset($_POST["submit"])){
       ?>
       </tbody>
       </table>
-    </div>
-
 
     <input type="button" name="add" id="add" value="Add More??"/>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST-INSERT" enctype="multipart/form-data">
@@ -211,7 +209,7 @@ if(isset($_POST["submit"])){
     </table>
     <input type="submit" value="add"/>
     </form>
-
+    </div>
 
 
 
