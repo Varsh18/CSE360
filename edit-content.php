@@ -62,14 +62,32 @@ else
 $insert=$insert.$column[$c].",";
 }
 
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+$r = sizeof($_POST)/$itr;
+for($c=0;$c<$r;$c++){
+$ins=$insert;
+for($c1=0;$c1<$itr;$c1++){
+if($column[$c1]=="image"){
+  $img=$_FILES["image$c"]['name'];
+  $target=$content."/".$img;
+  move_uploaded_file($_FILES["image$c"]['tmp_name'],$target);
+  if($c1==$itr-1)
+  $ins=$ins."'".$img."'".")";
+  else
+  $ins=$ins."'".$img."'".",";
+}
+else{
+if($c1==$itr-1)
+$ins=$ins."'".$_POST["$column[$c1]$c"]."'".")";
+else
+$ins=$ins."'".$_POST["$column[$c1]$c"]."'".",";
+}
+}
+if( mysqli_query($db,$ins)){}
+header("refresh: 1");
 
-
-
-
-
-
-
-
+}
+}
 
 
 ?>
