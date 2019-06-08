@@ -42,6 +42,36 @@ if(isset($_POST["submit"])){
 	echo "error";
 }
 }
+
+
+$db=mysqli_connect("localhost","root","","dp1");
+$column=array(10);
+$itr=0;
+$sql="SELECT `COLUMN_NAME` FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA`='dp1' AND `TABLE_NAME`='".$content."2'";
+$result=mysqli_query($db,$sql);
+$selectsql="SELECT * from ".$content.'2';
+$selectresult=mysqli_query($db,$selectsql);
+while($row=mysqli_fetch_assoc($result))
+$column[$itr++]=$row['COLUMN_NAME'];
+$insert="INSERT INTO ".$content.'2'." (";
+for($c=0;$c<count($column);$c++)
+{
+if($c == count($column)-1)
+$insert=$insert.$column[$c].") VALUES (";
+else
+$insert=$insert.$column[$c].",";
+}
+
+
+
+
+
+
+
+
+
+
+
 ?>
 <html lang="en" dir="ltr">
   <head>
