@@ -201,7 +201,56 @@ if(isset($_POST["submit"])){
       </tbody>
       </table>
     </div>
+
+
+    <input type="button" name="add" id="add" value="Add More??"/>
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST-INSERT" enctype="multipart/form-data">
+    <table id="insert">
+    <tbody>
+    </tbody>
+    </table>
+    <input type="submit" value="add"/>
+    </form>
+
+
+
+
     <script>
+
+
+    var column= <?php echo json_encode($column)?>;
+    var ctr=0,ctr1=0;
+    document.getElementById("add").addEventListener("click",function(){
+            var rowCnt = insert.rows.length;
+            var tr = insert.insertRow(rowCnt);
+            tr = insert.insertRow(rowCnt);
+            var td = document.createElement('td');
+
+             for(var c=0;c<column.length;c++){
+                    td = tr.insertCell(c);
+                      var ele = document.createElement('input');
+                    if(column[c] == 'image'){
+                    ele.setAttribute('type', 'file');
+                    ele.setAttribute('name', column[c]+ctr1);
+                    ctr1++;
+                    }
+                    else{
+                    ele.setAttribute('type', 'text');
+                    ele.setAttribute('name', column[c]+ctr);
+                    ctr++;
+                    }
+                    td.appendChild(ele);
+           }
+    });
+
+
+
+
+
+
+
+
+
     document.getElementsByClassName('add-button')[0].addEventListener('click',function(){
       document.querySelector('#add-content').style.display="flex";
     });
