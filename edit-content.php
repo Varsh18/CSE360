@@ -177,6 +177,30 @@ if(isset($_POST["submit"])){
             </form>
       </div>
     </div>
+
+    <div>
+
+      <table>
+      <thead>
+      <tr>
+      <?php
+      for($itr=0;$itr<count($column);$itr++)
+      echo "<th>".$column[$itr]."</th>";
+      ?>
+      </tr>
+      </thead>
+      <tbody>
+      <?php
+      while($row=mysqli_fetch_array($selectresult)){
+      echo "<tr>";
+      for($itr=0;$itr<count($column);$itr++)
+      echo "<td>".$row["$column[$itr]"]."</td>";
+      echo "</tr>";
+      }
+      ?>
+      </tbody>
+      </table>
+    </div>
     <script>
     document.getElementsByClassName('add-button')[0].addEventListener('click',function(){
       document.querySelector('#add-content').style.display="flex";
