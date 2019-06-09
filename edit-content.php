@@ -37,7 +37,7 @@ if(isset($_POST["submit"])){
         if(mysqli_query($db,$sql) && mysqli_query($db,$insertql)){
           $result="Added content";
           $myfile = fopen($content.".php", "w") or die("Unable to open file!");
-          copy("index.php",$content.".php");
+          copy("template.php",$content.".php");
         }
   }
   else
