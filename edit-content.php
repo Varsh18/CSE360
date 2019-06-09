@@ -134,7 +134,7 @@ if(isset($_POST["submit"])){
     </style>
   </head>
   <body>
-
+  <?php include "header.php" ?>
               <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
               <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <div id="content-box">

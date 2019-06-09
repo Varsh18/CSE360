@@ -71,7 +71,7 @@ width:10%;
 </style>
 </head>
 <body>
-
+  <?php include "header.php" ?>
 <table>
 <thead>
 <tr>
