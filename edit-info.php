@@ -68,10 +68,18 @@ th {
 th,td{
 width:10%;
 }
+hr{
+  display: inline-block;
+  width:150%;
+  height: 0.25em;
+  margin-left:-10em;
+  background-color: #456;
+}
 </style>
 </head>
 <body>
   <?php include "header.php" ?>
+  <hr/>
 <table>
 <thead>
 <tr>
@@ -127,6 +135,5 @@ document.getElementById("add").addEventListener("click",function(){
        }
 });
 </script>
-
 </body>
 </html>
