@@ -1,6 +1,8 @@
 <?php
 $actual_link = "http://$_SERVER[HTTP_HOST]/CSE360/";
-$text=$url=$result='';
+$text=$url=$result=$insert='';
+$column=array();
+$itr=1;
 $db=mysqli_connect("localhost","root","","cse360") or die("cannot connect");
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 if(isset($_POST["submit"])){
@@ -42,53 +44,6 @@ if(isset($_POST["submit"])){
 	echo "error";
 }
 }
-
-
-$db=mysqli_connect("localhost","root","","dp1");
-$column=array(10);
-$itr=0;
-$sql="SELECT `COLUMN_NAME` FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA`='dp1' AND `TABLE_NAME`='".$content."2'";
-$result=mysqli_query($db,$sql);
-$selectsql="SELECT * from ".$content.'2';
-$selectresult=mysqli_query($db,$selectsql);
-while($row=mysqli_fetch_assoc($result))
-$column[$itr++]=$row['COLUMN_NAME'];
-$insert="INSERT INTO ".$content.'2'." (";
-for($c=0;$c<count($column);$c++)
-{
-if($c == count($column)-1)
-$insert=$insert.$column[$c].") VALUES (";
-else
-$insert=$insert.$column[$c].",";
-}
-
-if($_SERVER["REQUEST_METHOD"]=="POST"){
-$r = sizeof($_POST)/$itr;
-for($c=0;$c<$r;$c++){
-$ins=$insert;
-for($c1=0;$c1<$itr;$c1++){
-if($column[$c1]=="image"){
-  $img=$_FILES["image$c"]['name'];
-  $target=$content."/".$img;
-  move_uploaded_file($_FILES["image$c"]['tmp_name'],$target);
-  if($c1==$itr-1)
-  $ins=$ins."'".$img."'".")";
-  else
-  $ins=$ins."'".$img."'".",";
-}
-else{
-if($c1==$itr-1)
-$ins=$ins."'".$_POST["$column[$c1]$c"]."'".")";
-else
-$ins=$ins."'".$_POST["$column[$c1]$c"]."'".",";
-}
-}
-if( mysqli_query($db,$ins)){}
-header("refresh: 1");
-
-}
-}
-
 
 ?>
 <html lang="en" dir="ltr">
@@ -170,30 +125,12 @@ header("refresh: 1");
     .pop-inside{
       padding-bottom: 3em;
     }
-
-    table, th, td {
-      border: 1px solid black;
-    }
-    table {
-      width: 100%;
-      border-collapse:collapse;
-    }
-    body{
-      margin-left:10em;
-      margin-right:10em;
-    }
-    input[type="text"]{
-    width:100%;
-    }
-    th {
-      height: 50px;
-    }
-    th,td{
-    width:50%;
-    }
     </style>
   </head>
   <body>
+
+              <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <div id="content-box">
 
 
@@ -202,10 +139,10 @@ header("refresh: 1");
           while($row=mysqli_fetch_array($result)){
               echo  "<div class='box'>";
               echo  " <div class='picture'>";
-              echo  '<a href="'.$row['url'].'"><img src="contents/'.$row['img_name']. '" alt="'.$row['name'].'"/></a>';
+              echo  '<a  href="#"><img src="contents/'.$row['img_name']. '" alt="'.$row['name'].'"/></a>';
               echo  "</div>";
               echo  "<div class='desc'>";
-              echo  '<a href="'.$row['url'].'"><span>'.$row['name'].'</span></a>';
+              echo  '<a href="#" class="anchor"><span>'.$row['name'].'</span></a>';
               echo  '</div>';
               echo  '</div>';
           }
@@ -246,78 +183,7 @@ header("refresh: 1");
             </form>
       </div>
     </div>
-
-    <div id="edit-table">
-
-      <table>
-      <thead>
-      <tr>
-      <?php
-      for($itr=0;$itr<count($column);$itr++)
-      echo "<th>".$column[$itr]."</th>";
-      ?>
-      </tr>
-      </thead>
-      <tbody>
-      <?php
-      while($row=mysqli_fetch_array($selectresult)){
-      echo "<tr>";
-      for($itr=0;$itr<count($column);$itr++)
-      echo "<td>".$row["$column[$itr]"]."</td>";
-      echo "</tr>";
-      }
-      ?>
-      </tbody>
-      </table>
-
-    <input type="button" name="add" id="add" value="Add More??"/>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST-INSERT" enctype="multipart/form-data">
-    <table id="insert">
-    <tbody>
-    </tbody>
-    </table>
-    <input type="submit" value="add"/>
-    </form>
-    </div>
-
-
-
     <script>
-
-
-    var column= <?php echo json_encode($column)?>;
-    var ctr=0,ctr1=0;
-    document.getElementById("add").addEventListener("click",function(){
-            var rowCnt = insert.rows.length;
-            var tr = insert.insertRow(rowCnt);
-            tr = insert.insertRow(rowCnt);
-            var td = document.createElement('td');
-
-             for(var c=0;c<column.length;c++){
-                    td = tr.insertCell(c);
-                      var ele = document.createElement('input');
-                    if(column[c] == 'image'){
-                    ele.setAttribute('type', 'file');
-                    ele.setAttribute('name', column[c]+ctr1);
-                    ctr1++;
-                    }
-                    else{
-                    ele.setAttribute('type', 'text');
-                    ele.setAttribute('name', column[c]+ctr);
-                    ctr++;
-                    }
-                    td.appendChild(ele);
-           }
-    });
-
-
-
-
-
-
-
-
-
     document.getElementsByClassName('add-button')[0].addEventListener('click',function(){
       document.querySelector('#add-content').style.display="flex";
     });
