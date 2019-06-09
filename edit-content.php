@@ -62,6 +62,12 @@ if(isset($_POST["submit"])){
       padding: 1.5em;
       text-align: center;
     }
+    .box1{
+      margin-left: 3em;
+      margin-top:  2em;
+      padding: 1.5em;
+      text-align: center;
+    }
     .desc{
       padding-top: 1.5em;
       display:inline-block;
@@ -148,7 +154,7 @@ if(isset($_POST["submit"])){
           }
        ?>
 
-        <div class="box">
+        <div class="box1">
             <div class="picture add-button">
                 <a href="#"><img src="images/add_new.png" alt="add new"/></a>
             </div>
@@ -184,6 +190,14 @@ if(isset($_POST["submit"])){
       </div>
     </div>
     <script>
+    $(document).ready(function(){
+      $('.box').click(function(){
+        var value=$(this).children('.desc').find('.anchor').text();
+        document.cookie="info="+value;
+        window.location.href="http://localhost/CSE360/edit-info.php";
+        return false;
+      });
+    });
     document.getElementsByClassName('add-button')[0].addEventListener('click',function(){
       document.querySelector('#add-content').style.display="flex";
     });

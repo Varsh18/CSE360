@@ -66,7 +66,7 @@ th {
   height: 50px;
 }
 th,td{
-width:50%;
+width:10%;
 }
 </style>
 </head>
