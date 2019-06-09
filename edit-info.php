@@ -92,7 +92,7 @@ echo "</tr>";
 ?>
 </tbody>
 </table>
-<input type="button" name="add" id="add" value="Wnna add more??"/>
+<input type="button" name="add" id="add" value="Add more??"/>
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
 <table id="insert">
 <tbody>
