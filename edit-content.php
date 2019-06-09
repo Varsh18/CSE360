@@ -7,6 +7,7 @@ $db=mysqli_connect("localhost","root","","cse360") or die("cannot connect");
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 if(isset($_POST["submit"])){
   $content=$_POST["name"];
+  $content=str_replace(' ', '_', $content);
   $insertql="CREATE TABLE ".$content."(";
   $count=$_POST["column-size"];
   $colname=array();
